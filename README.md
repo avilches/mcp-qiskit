@@ -6,9 +6,11 @@ Quantum circuit integration using Model Context Protocol (MCP) endpoints.
 
 This project connects quantum computing capabilities to LLMs through a simple MCP interface. Built with Qiskit, it lets you create and run quantum circuits from natural language instructions.
 
+https://www.youtube.com/watch?v=xLTrt35LbS0
+
 ## Key capabilities
 
-- Bell state circuit generation
+- Bell state circuit generation (demo)
 - OpenQASM 2.0 circuit creation
 - Circuit execution on simulators or IBM Quantum hardware
 - Backend discovery
@@ -29,10 +31,20 @@ git clone https://github.com/yourusername/mcp-qiskit.git
 cd mcp-qiskit
 ```
 
-2. Install dependencies:
+2. Install [qiskit](https://docs.quantum.ibm.com/guides/install-qiskit) and the dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+3. Configure your IBM Quantum account in https://quantum.ibm.com/ and get your API key.
+![api-key.png](api-key.png)
+ 
+4. Create a file `$HOME/.qiskit/config.json` like this with the api token: 
+```json
+{
+  "ibm_token": "<put here your IBM Quantum API token>"
+}
 ```
 
 ## Running
