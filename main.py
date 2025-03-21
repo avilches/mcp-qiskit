@@ -32,9 +32,7 @@ from tools.list_backends import list_available_backends
 # Create MCP server
 mcp = FastMCP(
     "qiskit", 
-    instructions="Quantum computing API for circuit creation and execution", 
-    host="0.0.0.0", 
-    port=8000
+    instructions="Quantum computing API for circuit creation and execution"
 )
 
 # Load token if available

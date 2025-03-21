@@ -25,9 +25,8 @@ Check out the demo video below to see how it works
 ## Prerequisites
 
 - Python 3.10+
-- Qiskit libraries
-- FastMCP
-- httpx
+- Qiskit installed with an IBM Quantum account
+- Claude Desktop (or any MCP-compatible LLM client)
 
 ## Setup
 
@@ -53,20 +52,8 @@ pip install -r requirements.txt
   "ibm_token": "<put here your IBM Quantum API token>"
 }
 ```
-
-## Running
-
-Launch the server with:
-
-```bash
-python main.py
-```
-
-## Claude Desktop integration
-
-To use with Claude Desktop:
-
-1. Add to your Claude config:
+ 
+5. Add to your Claude config:
 
 ```json
 {
@@ -79,9 +66,9 @@ To use with Claude Desktop:
 }
 ```
 
-2. Restart Claude Desktop
+6. Run or restart Claude Desktop
 
-## MCP endpoints
+## MCP tools
 
 The server provides these functions:
 
@@ -89,14 +76,6 @@ The server provides these functions:
 - `create_bell_circuit` - Creates a basic entanglement circuit
 - `create_custom_circuit` - Builds a circuit from OpenQASM code
 - `execute_circuit` - Runs circuits and returns measurement results
-
-## Demo
-
-<video src="https://github.com/avilches/mcp-qiskit/raw/refs/heads/main/resources/demo-1.mp4"></video>
-[demo-1.mp4](resources/demo-1.mp4)
-
-<video src="https://github.com/avilches/mcp-qiskit/raw/refs/heads/main/resources/demo-2.mp4"></video>
-[demo-2.mp4](resources/demo-2.mp4)
 
 ## License
 
