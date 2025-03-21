@@ -6,7 +6,7 @@ Quantum circuit integration using Model Context Protocol (MCP) endpoints.
 
 This project connects quantum computing capabilities to LLMs through a simple MCP interface. Built with Qiskit, it lets you create and run quantum circuits from natural language instructions.
 
-[![Demo](https://img.youtube.com/vi/xLTrt35LbS0/0.jpg)](https://www.youtube.com/watch?v=xLTrt35LbS0)
+[![Demo](https://img.youtube.com/vi/xLTrt35LbS0/0hqdefault.jpg)](https://www.youtube.com/watch?v=xLTrt35LbS0)
 
 
 
