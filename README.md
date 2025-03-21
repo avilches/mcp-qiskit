@@ -71,6 +71,10 @@ The server provides these functions:
 - `create_custom_circuit` - Builds a circuit from OpenQASM code
 - `execute_circuit` - Runs circuits and returns measurement results
 
+## Demo
+
+[demo-1.mp4](resources/demo-1.mp4)
+[demo-2.mp4](resources/demo-2.mp4)
 
 ## License
 
