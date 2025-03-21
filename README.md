@@ -73,7 +73,10 @@ The server provides these functions:
 
 ## Demo
 
+<video src="https://github.com/avilches/mcp-qiskit/raw/refs/heads/main/resources/demo-1.mp4"></video>
 [demo-1.mp4](resources/demo-1.mp4)
+
+<video src="https://github.com/avilches/mcp-qiskit/raw/refs/heads/main/resources/demo-2.mp4"></video>
 [demo-2.mp4](resources/demo-2.mp4)
 
 ## License
