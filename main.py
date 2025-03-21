@@ -23,11 +23,11 @@ except ImportError as e:
     logger.error(f"FastMCP import failed: {e}")
     sys.exit(1)
 
-from circuits.ibm_token import load_token
-from circuits.bell_circuit import create_bell_circuit, get_bell_circuit_ascii
-from circuits.custom_circuit import create_custom_circuit
-from circuits.execute_circuit import execute_circuit
-from circuits.list_backends import list_available_backends
+from tools.ibm_token import load_token
+from tools.bell_circuit import create_bell_circuit, get_bell_circuit_ascii
+from tools.custom_circuit import create_custom_circuit
+from tools.execute_circuit import execute_circuit
+from tools.list_backends import list_available_backends
 
 # Create MCP server
 mcp = FastMCP(
