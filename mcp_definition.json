@@ -1,0 +1,119 @@
+{
+    "schema_id": "mcp-1.0",
+    "functions": [
+        {
+            "name": "List available backends",
+            "description": "Lists all available Qiskit backends that the user has access to",
+            "parameters": [],
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "backends": {
+                        "type": "array",
+                        "description": "List of available backend names"
+                    },
+                    "active_account": {
+                        "type": "string",
+                        "description": "Information about the currently active account, if any"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Create a bell quantum circuit",
+            "description": "Creates a quantum circuit that prepares a Bell state (entangled state) using Qiskit",
+            "parameters": [],
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "circuit_representation": {
+                        "type": "string",
+                        "description": "String representation of the quantum circuit"
+                    },
+                    "circuit_drawing": {
+                        "type": "string",
+                        "description": "ASCII art representation of the circuit"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Create a custom quantum circuit",
+            "description": "Creates a custom quantum circuit based on OpenQASM 2.0 code",
+            "parameters": [
+                {
+                    "name": "instructions",
+                    "description": "OpenQASM 2.0 code for building the quantum circuit",
+                    "type": "string",
+                    "required": true
+                }
+            ],
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "circuit_representation": {
+                        "type": "string",
+                        "description": "String representation of the quantum circuit"
+                    },
+                    "circuit_drawing": {
+                        "type": "string",
+                        "description": "ASCII art representation of the circuit"
+                    },
+                    "num_qubits": {
+                        "type": "integer",
+                        "description": "Number of qubits in the circuit"
+                    },
+                    "num_clbits": {
+                        "type": "integer",
+                        "description": "Number of classical bits in the circuit"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Execute quantum circuit",
+            "description": "Executes a quantum circuit on a Qiskit backend and returns the results",
+            "parameters": [
+                {
+                    "name": "qasm_code",
+                    "description": "OpenQASM 2.0 code for the quantum circuit to execute",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "shots",
+                    "description": "Number of times to run the circuit (default: 1024)",
+                    "type": "integer",
+                    "required": false
+                },
+                {
+                    "name": "backend",
+                    "description": "Backend to use for execution (default: aer_simulator)",
+                    "type": "string",
+                    "required": false
+                }
+            ],
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "counts": {
+                        "type": "object",
+                        "description": "Measurement results as a dictionary of bit strings and counts"
+                    },
+                    "circuit_drawing": {
+                        "type": "string",
+                        "description": "ASCII art representation of the executed circuit"
+                    },
+                    "backend_name": {
+                        "type": "string",
+                        "description": "Name of the backend used for execution"
+                    },
+                    "execution_time": {
+                        "type": "number",
+                        "description": "Time taken to execute the circuit in seconds"
+                    }
+                }
+            }
+        }
+    ]
+}

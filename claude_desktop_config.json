@@ -1,0 +1,9 @@
+	{
+		"mcpServers": {
+			"qiskit": {
+				"command": "/Users/avilches/Work/Proy/IBM/mcp-qiskit2/mcp-qiskit/run_mcp.sh",
+				"args": [],
+				"cwd": "/Users/avilches/Work/Proy/IBM/mcp-qiskit2/mcp-qiskit"
+			}
+		}
+	}
