@@ -1,28 +1,28 @@
-# MCP Qiskit 
+# Qiskit MCP
 
-A FastMCP server that exposes quantum circuit functionality as Model Context Protocol (MCP) endpoints.
+Quantum circuit integration using Model Context Protocol (MCP) endpoints.
 
-## Overview
+## About
 
-This project provides a FastMCP server that allows you to interact with quantum circuits through a simple API. It leverages Qiskit to create, manipulate, and execute quantum circuits, and exposes these capabilities through the Model Context Protocol (MCP).
+This project connects quantum computing capabilities to LLMs through a simple MCP interface. Built with Qiskit, it lets you create and run quantum circuits from natural language instructions.
 
-## Features
+## Key capabilities
 
-- Create Bell state quantum circuits
-- Create custom quantum circuits using OpenQASM 2.0 code
-- Execute quantum circuits on local simulators or real IBM Quantum backends
-- List available Qiskit backends
+- Bell state circuit generation
+- OpenQASM 2.0 circuit creation
+- Circuit execution on simulators or IBM Quantum hardware
+- Backend discovery
 
-## Requirements
+## Prerequisites
 
-- Python 3.10 or newer
-- Qiskit
-- FastMCP (mcp[cli])
+- Python 3.10+
+- Qiskit libraries
+- FastMCP
 - httpx
 
-## Installation
+## Setup
 
-1. Clone this repository:
+1. Clone the repo:
 
 ```bash
 git clone https://github.com/yourusername/mcp-qiskit.git
@@ -35,58 +35,43 @@ cd mcp-qiskit
 pip install -r requirements.txt
 ```
 
-## Usage
+## Running
 
-### Starting the Server
-
-To start the MCP server, run:
+Launch the server with:
 
 ```bash
 python main.py
 ```
 
-The server will start at `http://0.0.0.0:3000`.
+## Claude Desktop integration
 
-### Testing the Server
+To use with Claude Desktop:
 
-A test client is included to verify the functionality of the server. You can run it with:
+1. Add to your Claude config:
 
-```bash
-python test_client.py
+```json
+{
+  "mcp_servers": [
+    {
+      "name": "Qiskit",
+      "path": "/path/to/mcp-qiskit/run_server.sh"
+    }
+  ]
+}
 ```
 
-By default, it runs only the basic tests that don't require an IBM Quantum token. To include IBM Quantum tests, you can provide a token:
+2. Restart Claude Desktop
 
-```bash
-python test_client.py --mode all --token YOUR_IBM_QUANTUM_TOKEN
-```
+## MCP endpoints
 
-## MCP Functions
+The server provides these functions:
 
-The server exposes the following functions through the MCP schema:
+- `list_backends` - Shows available Qiskit backends
+- `create_bell_circuit` - Creates a basic entanglement circuit
+- `create_custom_circuit` - Builds a circuit from OpenQASM code
+- `execute_circuit` - Runs circuits and returns measurement results
 
-1. **List available backends** - List all available Qiskit backends
-2. **Create a bell quantum circuit** - Create a Bell state circuit (a basic entanglement circuit)
-3. **Create a custom quantum circuit** - Create a circuit from OpenQASM 2.0 code
-4. **Execute quantum circuit** - Run a circuit on a Qiskit backend and get measurement results
-
-## API
-
-The API follows the MCP specification. You can get the full MCP schema by sending a GET request to `/mcp.json`.
-
-To call a function, send a POST request to `/function` with a JSON payload containing the function name and parameters.
-
-Example:
-
-```bash
-curl -X POST http://localhost:3000/function \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Create a bell quantum circuit",
-    "parameters": {}
-  }'
-```
 
 ## License
 
-[MIT License](LICENSE)
+CC0 (Creative Commons Zero)
