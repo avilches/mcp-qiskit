@@ -79,4 +79,4 @@ The server provides these functions:
 
 ## License
 
-CC0 (Creative Commons Zero)
+CC0 1.0 Universal (Creative Commons Zero). See [LICENSE](LICENSE) for the full text.
